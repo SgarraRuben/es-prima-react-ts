@@ -1,0 +1,25 @@
+
+@use './variables' as vars;
+
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme='light'] {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+}
+
+[data-bs-theme='dark'] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #f8f9fa;
+}
