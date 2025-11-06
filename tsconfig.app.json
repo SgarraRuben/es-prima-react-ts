@@ -23,7 +23,11 @@
     "paths": {
       "@/*": ["./src/*"],
       "@store/*": ["./src/store/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@molecules/*": ["./src/components/molecules/*"],
+      "@atoms/*": ["./src/components/atoms/*"],
+      "@layouts/*": ["./src/components/layouts/*"],
+
     }
   },
   "include": ["src"]
