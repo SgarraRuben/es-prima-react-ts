@@ -1,24 +1,13 @@
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import {useGetTestQuery} from '@store/api';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import GlobalLayout from "@layouts/GlobalLayout";
 
-function Layout() {
-
-  const { data } = useGetTestQuery();
-  return (
-    <div>
-      <h1>Test</h1>
-      {<p>{data ? JSON.stringify(data) : 'Loading...'}</p>}
-      <Outlet />
-    </div>
-  );
-}
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout></Layout>}>
+          <Route path="/" element={<GlobalLayout></GlobalLayout>}>
             <Route index element={<p>test</p>} />
           </Route>
         </Routes>
