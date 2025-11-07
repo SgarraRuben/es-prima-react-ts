@@ -27,6 +27,7 @@
       "@molecules/*": ["./src/components/molecules/*"],
       "@atoms/*": ["./src/components/atoms/*"],
       "@layouts/*": ["./src/components/layouts/*"],
+      "@page/*" :["./src/components/page/*"],
 
     }
   },
