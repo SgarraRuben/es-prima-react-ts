@@ -12,6 +12,7 @@ export default defineConfig({
       "@molecules": path.resolve(__dirname, "./src/components/molecules"),
       "@atoms": path.resolve(__dirname, "./src/components/atoms"),
       "@layouts": path.resolve(__dirname, "./src/components/layouts"),
+      "@page" : path.resolve(__dirname, "./src/components/page"),
     },
   },
   test: {

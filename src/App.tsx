@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GlobalLayout from "@layouts/GlobalLayout";
+import UserPage from "@page/UserPage";
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<GlobalLayout></GlobalLayout>}>
-            <Route index element={<p>test</p>} />
+            <Route index element={<UserPage></UserPage>} />
           </Route>
         </Routes>
       </BrowserRouter>
