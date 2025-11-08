@@ -1,2 +1,2 @@
 export * from './baseApi';
-export * from './testApi';
+export * from './UsersApi';

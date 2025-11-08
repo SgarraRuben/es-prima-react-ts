@@ -2,7 +2,8 @@
 @use './variables' as vars;
 
 :root {
-  --bs-primary: #8334c2; 
+  --bs-primary: black;
+  --bs-bg-father-color: #f5f5f5;
 }
 
 .btn-outline-primary {
@@ -19,9 +20,12 @@
 [data-bs-theme='light'] {
   --bs-body-bg: #ffffff;
   --bs-body-color: #212529;
+  --bs-bg-father-color:#f5f5f5;
+  
 }
 
 [data-bs-theme='dark'] {
   --bs-body-bg: #121212;
   --bs-body-color: #f8f9fa;
+  --bs-bg-father-color:#1a1a1a;
 }
