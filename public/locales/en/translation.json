@@ -2,6 +2,9 @@
   "pages": {
     "users": {
       "title": "Users",
+      "error_message":{
+        "error_api_users":"Error loading user..."
+      },
       "pagination":{
         "prev":"prev",
         "next":"next"

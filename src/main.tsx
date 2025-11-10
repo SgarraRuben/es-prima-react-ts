@@ -8,6 +8,7 @@ import i18n from './i18n/i18n';
 import { Provider } from 'react-redux';
 import { store } from '@store/index.ts';
 import '@styles/global.scss';
+import Toast from '@atoms/Toast';
 
 
 
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')!).render(
       <I18nextProvider i18n={i18n}>
          <Provider store={store}>
           <App />
+          <Toast></Toast>
         </Provider>
       </I18nextProvider>
   </StrictMode>,
