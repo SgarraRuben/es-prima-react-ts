@@ -16,21 +16,37 @@ import type { TableRowData } from "@molecules/Table";
 import Pagination from "@atoms/Pagination";
 import { useSearchParams } from "react-router-dom";
 import UserDetailsModal from "@molecules/Modals/UserDetailModal";
+import { useAppDispatch } from "@store/utility";
+import { showToast } from "@store/toastSlice";
 
 const Table = React.lazy(() => import("@molecules/Table"));
 
 const UserPage: React.FC = () => {
   const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useAppDispatch();
 
   const [searchName, setSearchName] = useState("");
   const [handleFilter, setHandleFilter] = useState<string[]>([]);
   const [selectedRow, setSelectedRow] = useState<TableRowData | null>(null);
 
-  const { data: usersResponse, isLoading } = useGetUsersQuery({
+  const { data: usersResponse, isLoading: isLoadingUsers,isError:isErrorApiUsers, error:errorApiUsers } = useGetUsersQuery({
     page: Number(searchParams.get("page") || 1),
     perPage: 5,
   });
+
+  useEffect(() => {
+    if (isErrorApiUsers) {
+      console.log(errorApiUsers);
+      dispatch(
+        showToast({
+          id:"usersApi",
+          message: t("pages.users.error_message.error_api_users"),
+          type: "danger",
+        })
+      );
+    }
+  }, [isErrorApiUsers, errorApiUsers]);
 
   useEffect(() => {
     console.log(usersResponse);
@@ -155,7 +171,7 @@ const UserPage: React.FC = () => {
               <Table
                 columnsOrder="pages.users.table.columns"
                 data={filteredData}
-                loading={isLoading}
+                loading={isLoadingUsers}
                 onRowClick={setSelectedRow}
                 fallBackValue={t("pages.users.table.fall_back_value")}
               />

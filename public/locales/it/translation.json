@@ -2,6 +2,9 @@
   "pages": {
     "users": {
       "title": "Utenti",
+      "error_message":{
+        "error_api_users":"Errore caricamento utenti..."
+      },
       "pagination":{
         "prev":"prev",
         "next":"next"
