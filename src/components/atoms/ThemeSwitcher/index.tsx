@@ -1,23 +1,28 @@
 import { useAppDispatch, useAppSelector } from '@store/utility';
-import { toggleTheme } from '@store/themeSlice';
 import styles from './styles.module.scss';
-import { Button } from 'react-bootstrap';
+import { toggleTheme } from '@store/themeSlice';
+import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 const ThemeSwitcher = () => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.theme);
+  const { t } = useTranslation();
 
   return (
-    <Button
-      variant="outline-secondary"
-      size="sm"
-      onClick={() => dispatch(toggleTheme())}
-      className={styles.toggle}
-    >
-      {theme === 'light' ? 'Light Mode' : 'Dark Mode'}
-    </Button>
+    <div className={classNames(styles.theme_switcher_wrapper)} onClick={()=> dispatch(toggleTheme())}>
+      <div className='fw-bold'>
+        {t("pages.users.theme_switcher.label")} :
+      </div>
+      <div className={classNames(styles.theme_switcher, {
+        [styles.theme_switcher_dark]: theme === "dark"
+      })}>
+        <div className={classNames(styles.theme_switcher_ball)}></div>
+      </div>
+    </div>
   );
 };
+
 
 export default ThemeSwitcher;
 

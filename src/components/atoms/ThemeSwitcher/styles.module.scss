@@ -1,8 +1,37 @@
-.toggle {
-  border-radius: 2rem;
-  padding: 4px 10px;
+.theme_switcher_wrapper {
+  cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
+  padding: 10px;
+  gap:10px;
+  justify-content: start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.theme_switcher {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 30px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.theme_switcher_dark {
+  background-color: #4f4f4f;
+}
+
+.theme_switcher_ball {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.theme_switcher_dark .theme_switcher_ball {
+  transform: translateX(20px);
 }

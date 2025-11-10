@@ -1,0 +1,7 @@
+.custom_search {
+  &:focus {
+    border-color: #8334c2 !important; 
+    box-shadow: 0 0 0 0.2rem #eee3fd !important;
+    outline: none !important; 
+  }
+}
