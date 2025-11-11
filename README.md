@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+ # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ Scalable, optimized, and high-performance frontend application built following an Atomic Design approach, enabling reusable and configurable components.
 
-Currently, two official plugins are available:
+## Technologies and libraries
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** : Library for building single-page applications using reusable, declarative UI components.
 
-## React Compiler
+- **Typescript** : Strongly typed programming language that builds on JavaScript, providing static type checking and modern     development tools for large-scale applications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Vite** : Build tool that provides a fast development server and optimized production builds for modern web applications
 
-## Expanding the ESLint configuration
+- **i18n** : Library for managing multilingual applications through centralized configurations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Redux toolkit** : Library for global state management, toolkit version simplifies store setup, reduces boilerplate, and provides hooks for state management.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **RTK Query** : Redux integrated API management library that provides built-in support for caching, request methods, and asynchronous data fetching.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Bootstrap** : Framework for building responsive applications. Provides utility classes to manage Flexbox layouts.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **SASS with Modules** :  Extends CSS with variables, nested rules, mixins, and functions, making stylesheets more maintainable and scalable. Using modules ensures that class names are locally scoped and unique in the HTML.
+
+- **Classnames** : Library for conditionally combining CSS class names.
+
+- **Vitest** : Fast and lightweight testing framework for Vite projects, providing unit, integration, and snapshot.
+
+- **Testing Library** : Set of utilities to test UI components. API simulates user interactions.
+
+## Instructions
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/SgarraRuben/es-prima-react-ts.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Install dependencies:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Run Application
+
+```bash
+npm start
+```
+
+4. Build application
+
+```bash
+npm build
+```
+
+5. Run test
+
+```bash
+npm test
+```
+
+6. Run test with coverage to have UI reportage 
+
+```bash
+npm test_coverage
+```
+
+
+
+
