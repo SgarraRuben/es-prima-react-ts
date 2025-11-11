@@ -1,6 +1,6 @@
  # React + TypeScript + Vite
 
- Scalable, optimized, and high-performance frontend application built following an Atomic Design approach, enabling reusable and configurable components.
+ Scalable and optimized frontend application built following an Atomic Design approach
 
 ## Technologies and libraries
 
