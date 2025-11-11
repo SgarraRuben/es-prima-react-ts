@@ -1,20 +1,18 @@
-import React, { type ChangeEvent } from "react";
-import styles from './styles.module.scss';
+import React, { type ChangeEvent, memo } from "react";
+import styles from "./styles.module.scss";
 import classNames from "classnames";
-
 
 interface SearchBarProps {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder:string;
+  placeholder: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ value, onChange,placeholder }) => {
-    
+const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, placeholder }) => {
   return (
     <input
       type="text"
-      className={classNames(styles.custom_search,"form-control")}
+      className={classNames(styles.custom_search, "form-control")}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
@@ -22,4 +20,4 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange,placeholder }) =>
   );
 };
 
-export default SearchBar;
+export default memo(SearchBar);

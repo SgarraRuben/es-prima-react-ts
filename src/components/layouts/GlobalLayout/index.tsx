@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
 import classNames from "classnames";
 import { Outlet } from "react-router-dom";
 import SideBar from "../../molecules/SideBar";
 import BurgerButton from "@atoms/BurgerButton";
 import styles from "./styles.module.scss";
+import Spinner from "@atoms/Spinner";
 
 const GlobalLayout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -65,7 +66,9 @@ const GlobalLayout: React.FC = () => {
         )}
 
         <div className={styles.contentInner}>
-          <Outlet />
+          <Suspense fallback={<Spinner />}>
+            <Outlet />
+          </Suspense>
         </div>
       </main>
     </div>
