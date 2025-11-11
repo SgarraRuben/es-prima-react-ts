@@ -63,7 +63,7 @@ npm test
 6. Run test with coverage to have UI reportage 
 
 ```bash
-npm test_coverage
+npm test:coverage
 ```
 
 
