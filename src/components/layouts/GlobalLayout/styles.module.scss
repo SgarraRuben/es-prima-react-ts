@@ -1,0 +1,123 @@
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+.sidebar {
+  background-color: #8334c2;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+  width: 250px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+}
+
+.sidebarMobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw !important;
+  max-width: 80vw;
+  transform: translateX(-100%);
+  z-index: 1050;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  line-height: 1;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1000;
+}
+
+.contentShift {
+  transform: translateX(50vw);
+  pointer-events: none;
+  user-select: none;
+}
+
+.contentInner {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+
+.burgerWrap {
+  padding: 12px;
+  z-index: 1200;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; 
+    margin-left: 0;
+  }
+
+  .main {
+    margin-left: 0; 
+  }
+}
+
+@media (max-width: 420px) {
+  .sidebarMobile {
+    width: 80vw !important;
+  }
+
+  .contentShift {
+    transform: translateX(80vw);
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .sidebar {
+    width: 280px;
+  }
+}

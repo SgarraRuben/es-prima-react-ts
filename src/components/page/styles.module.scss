@@ -1,0 +1,43 @@
+.main_card {
+  background-color: var(--bs-bg-father-color); 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+
+.top_section {
+  background-color: var(--bs-body-bg);
+  height: 20vh; 
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.content_section {
+  background-color: var(--bs-body-bg);
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1vw;
+  border-radius: 15px;
+}
+
+
+.table_wrapper {
+  flex: 1; 
+  overflow-y: auto; 
+}
+
+.search_bar_section {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .search_bar_section {
+    width: 100%;
+  }
+}

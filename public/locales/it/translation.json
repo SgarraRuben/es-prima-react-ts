@@ -1,0 +1,47 @@
+{
+  "pages": {
+    "users": {
+      "title": "Utenti",
+      "error_message":{
+        "error_api_users":"Errore caricamento utenti..."
+      },
+      "pagination":{
+        "prev":"prev",
+        "next":"next"
+      },
+      "searchbar_placeholder": "Cerca nome utente...",
+
+      "theme_switcher": {
+        "label": "Cambia tema"
+      },
+      "lenguage_setting": {
+        "label": "Lingua"
+      },
+
+      "filters": {
+        "title": "Applica filtri",
+        "roles": {
+          "title": "Ruoli"
+        }
+      },
+      "table": {
+        "fall_back_value":"Nessun risultato..",
+        "columns": {
+          "id": "#",
+          "email": "Email",
+          "full_name": "Nome completo",
+          "role": "Ruolo"
+        }
+      },
+      "user_modal": {
+        "information": {
+          "id": "ID",
+          "email": "Email",
+          "first_name": "Nome",
+          "last_name": "Cognome",
+          "role": "Ruolo"
+        }
+      }
+    }
+  }
+}
