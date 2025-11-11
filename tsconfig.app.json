@@ -28,6 +28,7 @@
       "@atoms/*": ["./src/components/atoms/*"],
       "@layouts/*": ["./src/components/layouts/*"],
       "@page/*" :["./src/components/page/*"],
+      "@utilities/*":["./src/utilities/*"]
 
     }
   },

@@ -4,6 +4,7 @@ import React, {
   type ChangeEvent,
   useMemo,
   useEffect,
+  useCallback,
 } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
@@ -18,6 +19,7 @@ import { useSearchParams } from "react-router-dom";
 import UserDetailsModal from "@molecules/Modals/UserDetailModal";
 import { useAppDispatch } from "@store/utility";
 import { showToast } from "@store/toastSlice";
+import type { User } from "@utilities/interface/model";
 
 const Table = React.lazy(() => import("@molecules/Table"));
 
@@ -54,7 +56,7 @@ const UserPage: React.FC = () => {
 
   const apiData = useMemo(
     () =>
-      usersResponse?.data?.map((user) => ({
+      usersResponse?.data?.map((user:User) => ({
         id: user.id,
         full_name: user.first_name + " " + user.last_name,
         first_name: user.first_name,
@@ -66,9 +68,19 @@ const UserPage: React.FC = () => {
     [usersResponse]
   );
 
-  const handlePageChange = (newPage: number) => {
+  const handlePageChange = useCallback(
+  (newPage: number) => {
     setSearchParams({ page: String(newPage) });
-  };
+  },
+  [setSearchParams]
+);
+
+const handleSearchChange = useCallback(
+  (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchName(e.target.value);
+  },
+  [] // nessuna dipendenza, perché setSearchName è stabile
+);
 
   const filteredData = useMemo(
     () =>
@@ -122,9 +134,7 @@ const UserPage: React.FC = () => {
             <SearchBar
               placeholder={t("pages.users.searchbar_placeholder")}
               value={searchName}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setSearchName(e.target.value)
-              }
+              onChange={handleSearchChange}
             />
           </div>
           <div className={classNames(styles.table_wrapper)}>
