@@ -28,11 +28,11 @@
 
 ## Instructions
 
-## Installation
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/SgarraRuben/es-prima-react-ts.git
+cd es-prima-react-ts
 ```
 
 
@@ -48,19 +48,19 @@ npm install
 npm start
 ```
 
-4. Build application
+- Build application
 
 ```bash
 npm build
 ```
 
-5. Run test
+- Run test
 
 ```bash
 npm test
 ```
 
-6. Run test with coverage to have UI reportage 
+- Run test with coverage to have UI reportage 
 
 ```bash
 npm test:coverage
